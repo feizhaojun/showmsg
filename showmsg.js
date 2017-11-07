@@ -12,13 +12,16 @@ function showMsg(param){
     $("body").append("<div id='layer_cover'></div>");
     $("body").append("<div id='layer_msg'>" + (param.title ? "<h2>" + param.title + "</h2>" : "" ) + "<div class='content'>" + param.content +"</div></div>");
     $("#layer_cover").css({"height":$(document).height()});
+    $(window).on('resize',function(){
+        $("#layer_cover").css({"height":$(document).height()});
+    });
     $("#layer_msg").css({"margin-left":-$("#layer_msg").width()/2 + "px","margin-top":-$("#layer_msg").height()/2 + "px"});
     //$("body").css({"overflow":"hidden"});
 
     if(param.close && param.close[0] == 1){
         $("#layer_msg").append("<a href='javascript:void(0);' class='close'>" + param.close[1] + "</a><div style='padding-bottom:10px;'></div>");
     }else if(param.close == 2){
-
+        $("#layer_msg").append("<a href='javascript:void(0);' class='close close_btn'></a>");
     }
 
     if(param.layer_close == 1){
