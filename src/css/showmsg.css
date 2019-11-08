@@ -1,0 +1,55 @@
+/* - 弹出层 start - */
+body > .show-msg-component a{
+    text-decoration: none;
+}
+body > .show-msg-component{
+    display: none;
+    width: 100%;
+    background: rgba(0, 0, 0, .3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+body > .show-msg-component .show-msg-box{
+    min-width: 200px;
+    max-width: 60%;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 1px 1px 8px 0 #666;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+}
+body > .show-msg-component .show-msg-content{
+    padding: 20px;
+    font-size: 14px;
+}
+body > .show-msg-component .btn{
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 15px;
+    background: linear-gradient(60deg, #2092FC, #2FA2FC);
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 1px 4px 4px #cce7fe;
+}
+body > .show-msg-component .btn:hover{
+    background: #2092FC;
+    box-shadow: 1px 4px 4px #9dcefd;
+}
+body > .show-msg-component .close-btn{
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url(../img/icon-close.png) no-repeat 0 0;
+    opacity: .8;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+body > .show-msg-component .close-btn:hover{
+    opacity: 1;
+}
+/* - 弹出层 end - */

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body style="background:#ddd;">
+    <div style="background: #fff;">
+        哈哈哈
+    </div>
+<script src="//pim.kim/sim/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./src/css/showmsg.css" />
+<script src="./src/js/showmsg.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/style.css">
+<script>
+    // setAutoplayTips
+    var autoplayTipsTpl = '<div class="check-client-box">\
+            <div class="t">\
+                <i class="icon-problem"></i>\
+                <strong>请务必检查如下设置，否则无法正常练习</strong>\
+            </div>\
+            <p class="d">最新版Safari浏览器默认禁止了听力音频的播放，为了您能正常进行听力、口语练习，请按如下步骤设置。</p>\
+            <div class="intro">\
+                <div class="step-1">\
+                    <p>1.点击左上角Safari浏览器选择"此网站设置"</p>\
+                    <i class="icon-step-1"></i>\
+                </div>\
+                <div class="step-2">\
+                    <p>2.将自动播放设置为允许全部自动播放，再刷新页面</p>\
+                    <i class="icon-step-2"></i>\
+                </div>\
+            </div>\
+            <div class="has-set-up">\
+                <a href="javascript:;" class="btn">我已检查并设置完毕</a>\
+            </div>\
+        </div>'
+    
+    var ua = window.navigator.userAgent
+    var showTips = 0
+    var version = ua.match(/(Chrome\/|Version\/)(.*?)(\.|0|\s)/)[2]
+
+    ua.indexOf('Safari') > -1 && version > 10 && (showTips = 1)
+    ua.indexOf('Chrome') > -1 && version > 66 && (showTips = 1)
+
+    if (localStorage.getItem("setAutoplayTips") !== '1' && showTips) {
+        var showMsg = $.showMsg({
+            content: autoplayTipsTpl
+        })
+        showMsg.show(function() {
+            $('.has-set-up .btn').on('click', function() {
+                var showConfirm = $.showMsg({
+                    content: '<div class="has-set-confirm"><p>确认您已按照提示步骤完成了浏览器设置？</p><p>如未设置，听力和口语练习将无法正常进行。</p><a href="javascript:;" class="btn confirm">确认设置完毕</a><a href="javascript:;" class="btn cancel">重新设置</a></div>'
+                })
+                showConfirm.show(function() {
+                    $('.has-set-confirm').on('click', 'a', function() {
+                        if ($(this).hasClass('confirm')) {
+                            localStorage.setItem("setAutoplayTips", 1)
+                            showMsg.remove()
+                        }
+                        showConfirm.remove()
+                    })
+                })
+            })
+        })
+    }
+
+</script>
+</body>
+</html>

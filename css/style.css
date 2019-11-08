@@ -1,0 +1,63 @@
+.check-client-box{
+  width: 630px;
+  padding: 20px 20px 10px;
+  font-size: 12px;
+}
+.check-client-box .t{
+  line-height: 36px;
+  font-size: 20px;
+  text-align: center;
+}
+.check-client-box .d{
+  color: #707070;
+  text-align: center;
+  margin-top: 18px;
+}
+.check-client-box .intro{
+  margin: 30px auto 0;
+  overflow: hidden;
+}
+.check-client-box .intro div{
+  float: left;
+}
+.check-client-box .intro div.step-2{
+  float: right;
+}
+.check-client-box .has-set-up{
+  text-align: center;
+}
+.check-client-box .btn{
+  font-size: 14px;
+}
+
+.check-client-box i.icon-problem{
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background: url(../img/problem.png) no-repeat 0 0;
+  vertical-align: bottom;
+}
+.check-client-box i.icon-step-1{
+  display: inline-block;
+  width: 268px;
+  height: 210px;
+  margin: 10px 0 30px;
+  background: url(../img/step1.png) no-repeat 0 0;
+}
+.check-client-box i.icon-step-2{
+  display: inline-block;
+  width: 318px;
+  height: 210px;
+  margin: 10px 0 30px;
+  background: url(../img/step2.png) no-repeat 0 0;
+}
+/* 确认设置 */
+.has-set-confirm{
+  text-align: center;
+  padding: 0 30px 10px;
+}
+.has-set-confirm .btn.cancel{
+  padding: 0 30px;
+  margin-left: 20px;
+  background: #B7B7B7;
+}
