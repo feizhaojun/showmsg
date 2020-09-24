@@ -184,6 +184,29 @@ function ShowMsg(config) {
   el.children[0].children[i++].onclick = function () {
     el.style.display = 'none';
     config.cancel && config.cancel();
+    // toast
+    var toast = document.createElement('div');
+    var t = toast.style;
+    t.width = '70%';
+    t.textAlign = 'center';
+    t.position = 'fixed';
+    t.top = '50%';
+    t.fontWeight = '300';
+    t.left = '50%';
+    t.padding = '.6em .2em';
+    t.transform = 'translate(-50%, -50%)';
+    t.borderRadius = '.2em';
+    t.backgroundColor = 'rgba(0,0,0,.5)';
+    t.fontSize = (px2rem > 100 ? 100 : px2rem) + 'px';
+    t.transition = '.3s';
+    document.body.appendChild(toast);
+    toast.innerHTML = '<span style="display:block;line-height:.44em;font-size: .32em;color: #fff;">您之后可以在学员列表中进行查看关联学员</span>';
+    window.setTimeout(function() {
+      t.opacity = '0';
+      window.setTimeout(function() {
+        toast.remove();
+      }, 300);
+    }, 4000);
   };
 
   if (config.confirm) {
