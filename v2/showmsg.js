@@ -157,6 +157,7 @@ function ShowMsg(config) {
   s.left = '0';
   s.top = '0';
   s.minHeight = '100vh';
+  s.zIndex = '999';
   var px2rem = document.documentElement.clientWidth / 7.5;
   s.fontSize = px2rem + 'px';
   var i = 0;
