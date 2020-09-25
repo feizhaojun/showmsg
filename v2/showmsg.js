@@ -201,7 +201,7 @@ function ShowMsg(config) {
     t.fontSize = px2rem + 'px';
     t.transition = '.3s';
     document.body.appendChild(toast);
-    toast.innerHTML = '<span style="display:block;line-height:.44em;font-size: .32em;color: #fff;">您之后可以在学员列表中进行查看关联学员</span>';
+    toast.innerHTML = '<span style="display:block;line-height:1.8em;font-size: .32em;color: #fff;">您之后可以在学员列表中进行查看关联学员</span>';
     window.setTimeout(function() {
       t.opacity = '0';
       window.setTimeout(function() {
