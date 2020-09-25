@@ -70,7 +70,7 @@ function ShowMsg(config) {
     t.backgroundColor = 'rgba(0,0,0,.5)';
     t.fontSize = px2rem + 'px';
     t.transition = '.3s';
-    s.zIndex = '999';
+    t.zIndex = '999';
     document.body.appendChild(toast);
     toast.innerHTML = '<span style="display:block;line-height:1.8em;font-size: .32em;color: #fff;">您之后可以在学员列表中进行查看关联学员</span>';
     window.setTimeout(function() {
