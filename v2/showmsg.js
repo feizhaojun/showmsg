@@ -156,8 +156,9 @@ function ShowMsg(config) {
   s.position = 'fixed';
   s.left = '0';
   s.top = '0';
+  s.minHeight = '100vh';
   var px2rem = document.documentElement.clientWidth / 7.5;
-  s.fontSize = (px2rem > 100 ? 100 : px2rem) + 'px';
+  s.fontSize = px2rem + 'px';
   var i = 0;
   var content = "<div class=\"showmsg-content\" style=\"font-size: 1em;width:5.83em;border-radius:.2em;background:#fff;position:fixed;top:50%;left:50%;font-family: PingFang-SC;color: #1E1E1E;transform: translate(-50%, -50%);padding-top: .44em;font-weight: 300;\">";
   i = 1;
@@ -197,7 +198,7 @@ function ShowMsg(config) {
     t.transform = 'translate(-50%, -50%)';
     t.borderRadius = '.2em';
     t.backgroundColor = 'rgba(0,0,0,.5)';
-    t.fontSize = (px2rem > 100 ? 100 : px2rem) + 'px';
+    t.fontSize = px2rem + 'px';
     t.transition = '.3s';
     document.body.appendChild(toast);
     toast.innerHTML = '<span style="display:block;line-height:.44em;font-size: .32em;color: #fff;">您之后可以在学员列表中进行查看关联学员</span>';
